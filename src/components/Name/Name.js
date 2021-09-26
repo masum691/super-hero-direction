@@ -1,9 +1,8 @@
 import React from 'react';
 import './Name.css'
-
+// Name 
 const Name = (props) => {
     const { name, img } = props.singlePresident;
-    console.log(name)
     return (
         <div className="single-president">
             <div>
