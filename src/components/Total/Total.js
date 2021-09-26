@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Name from '../Name/Name';
 import './Total.css'
 
+// total 
 const Total = (props) => {
     const {total} = props;
     let totalSalary = 0;
@@ -17,6 +17,7 @@ const Total = (props) => {
             <h2 className="total-cost">Total Cost: <i className="fas fa-dollar-sign dollar"></i> {totalSalary}</h2>
             </div>
             <div>
+            {/* using map  */}
             {
                 total.map(singlePresident => <Name
                      key={singlePresident.id}

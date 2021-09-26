@@ -3,6 +3,7 @@ import President from '../President/President';
 import Total from '../Total/Total';
 import './Presidents.css'
 
+// Presidents 
 const Presidents = () => {
     const [presidents, setPresidents] = useState([]);
     const [total, setTotal] = useState([]);
@@ -11,6 +12,7 @@ const Presidents = () => {
             .then(res => res.json())
             .then(data => setPresidents(data))
     }, [])
+    // handleCart click handler 
     const handleCart = (president) => {
         const newCart = [...total, president];
         setTotal(newCart)
