@@ -5,20 +5,30 @@ import './Presidents.css'
 
 const Presidents = () => {
     const [presidents, setPresidents] = useState([]);
-    useEffect( () => {
+    const [total, setTotal] = useState([]);
+    useEffect(() => {
         fetch('./output.json')
-                .then(res => res.json())
-                .then(data => setPresidents(data))
+            .then(res => res.json())
+            .then(data => setPresidents(data))
     }, [])
+    const handleCart = (president) => {
+        const newCart = [...total, president];
+        setTotal(newCart)
+    }
+    
     return (
         <div className="presidents-container">
             <div className="presidents">
-            {
-                presidents.map(president => <President president={president}></President>)
-            }
+                {
+                    presidents.map(president => <President
+                        key={president.id}
+                        president={president}
+                        handleCart = {handleCart}>
+                    </President>)
+                }
             </div>
             <div className="total">
-                <Total></Total>
+                <Total total={total}></Total>
             </div>
         </div>
     );
